@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "planilha"
+version = "1.0.0"
+description = "Motor de planilha em Python puro: fórmulas com lexer e parser próprios, grafo de dependências e recálculo topológico incremental."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "condeDeveloper" }]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Office/Business :: Financial :: Spreadsheet",
+]
+
+[project.scripts]
+planilha = "planilha.__main__:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+include = ["planilha*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
